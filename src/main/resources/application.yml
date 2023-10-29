@@ -1,0 +1,13 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    username: user
+    password: user
+    url: jdbc:postgresql://localhost:5471/user-post
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
