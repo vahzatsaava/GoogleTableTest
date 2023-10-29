@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgres-post:
+    container_name: postgres-post
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: user-post
+      PGDATA: /data/GoogleTableTest
+    volumes:
+      - postgres-post:/data/postgres
+    ports:
+      - "5471:5432"
+    restart: unless-stopped
+    networks:
+      - app
+
+volumes:
+  postgres-post:
+    external: true
+networks:
+  app:
+    driver: bridge
